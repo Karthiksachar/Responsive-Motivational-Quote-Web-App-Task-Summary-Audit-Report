@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Inspiration — Responsive Web App</title>
+  <meta name="description" content="A responsive, accessible motivational quote app built with mobile-first CSS and JavaScript." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Daily Inspiration Home">Daily Inspiration</a>
+
+      <!-- Accessible hamburger button -->
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="#" tabindex="0">Home</a></li>
+          <li><a href="#" tabindex="0">Quotes</a></li>
+          <li><a href="#" tabindex="0">Gallery</a></li>
+          <li><a href="#" tabindex="0">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="card quote-card" aria-live="polite">
+      <!-- Responsive image with srcset + sizes (will choose appropriate resolution) -->
+      <div class="image-wrap" aria-hidden="true">
+        <img id="quote-image"
+             src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80&auto=format&fit=crop"
+             srcset="
+               https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallpaperflare.com%2Fsearch%3Fwallpaper%3Dbeautiful%2Bnature%2Bpicture%2B%2B1920x1080&psig=AOvVaw1FEbtA1XSs9gKg4n_Avdmf&ust=1754920478055000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIiQtbCygI8DFQAAAAAdAAAAABAE 480w,
+               https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2FAlFajr-Developer-Nature-Wallpaper-HD%2Fdp%2FB07YDZYT1W&psig=AOvVaw1FEbtA1XSs9gKg4n_Avdmf&ust=1754920478055000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIiQtbCygI8DFQAAAAAdAAAAABAL 800w,
+               https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Ffr%2Fsearch%2Fimages%3Fk%3Dnature%2Bwallpaper%2Bhd&psig=AOvVaw1FEbtA1XSs9gKg4n_Avdmf&ust=1754920478055000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIiQtbCygI8DFQAAAAAdAAAAABAV 1200w
+             "
+             sizes="(max-width:600px) 100vw, (max-width:1200px) 80vw, 800px"
+             alt="Scenic background"
+             loading="lazy"
+             decoding="async">
+      </div>
+
+      <div class="quote-content">
+        <blockquote id="quote-text" class="quote-text">"Your limitation—it's only your imagination."</blockquote>
+        <cite id="quote-author" class="quote-author">— Shakesphere</cite>
+
+        <div class="controls">
+          <button id="new-quote" class="btn" aria-label="Show new quote">New Quote</button>
+          <button id="share-quote" class="btn outline" aria-label="Copy quote to clipboard">Share</button>
+          <label class="auto-rotate">
+            <input type="checkbox" id="auto-rotate" checked />
+            Auto rotate
+          </label>
+        </div>
+
+        <div class="meta">
+          <small>Tip: open DevTools → Toggle device toolbar to test various screen sizes</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>&copy; 2025 Daily Inspiration</div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
